@@ -1,0 +1,46 @@
+networks:
+  localnetwork:
+    name: localnetwork
+    driver: bridge
+
+services:
+
+  user-db:
+    image: mysql:latest
+    ports:
+      - '33066:3306'
+    restart: always
+    environment:
+      MYSQL_DATABASE: user_ms
+      MYSQL_ALLOW_EMPTY_PASSWORD: null
+    volumes:
+      - .dbdata:/var/lib/mysql
+    networks:
+      - localnetwork
+
+  user-service:
+    image: app/user-service
+    stdin_open: true
+    tty: true
+    build:
+      context: ./src/services/users
+      dockerfile: Dockerfile
+    ports:
+        - "5000:5000"
+    networks:
+      - localnetwork
+
+  ui-service:
+    image: app/ui-service
+    stdin_open: true
+    tty: true
+    build:
+      context: ./src/services/ui
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - localnetwork
+
+
+

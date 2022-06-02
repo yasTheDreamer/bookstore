@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
+.home__container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.header__one {
+  position: absolute;
+  color: white;
+}
+.image__container {
+  width: 100%;
+  height: 100%;
+  background-color: #001446;
+  background-image: url("../../../assets/img/test.gif");
+  background-blend-mode: lighten;
+}
+
+.image__container > img {
+  width: 90%;
+  height: 100%;
+  float: right;
+  margin-right: -70px;
+}
+
+.top-section__container {
+  display: flex;
+}
+
+.invisible__div {
+  display: none;
+  width: 100%;
+  min-height: 100%;
+}
