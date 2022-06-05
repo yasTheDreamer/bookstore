@@ -19,7 +19,7 @@ services:
       - localnetwork
 
   user-service:
-    image: app/user-service
+    image: user-service
     stdin_open: true
     tty: true
     build:
@@ -31,7 +31,7 @@ services:
       - localnetwork
 
   ui-service:
-    image: app/ui-service
+    image: ui-service
     stdin_open: true
     tty: true
     build:

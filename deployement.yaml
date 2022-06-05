@@ -26,10 +26,10 @@ spec:
           ports:
             - containerPort: 3306
         - name: bookstore-users
-          image: app/user-service
+          image: app/user-service:latest
           ports:
             - containerPort: 5000
         - name: bookstore-ui
-          image: app/ui-service
+          image: app/ui-service:latest
           ports:
             - containerPort: 3000
