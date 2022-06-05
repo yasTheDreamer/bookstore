@@ -19,7 +19,7 @@ services:
       - localnetwork
 
   user-service:
-    image: user-service
+    image: yasthedreamer/bookstore:user-service
     stdin_open: true
     tty: true
     build:
@@ -31,7 +31,7 @@ services:
       - localnetwork
 
   ui-service:
-    image: ui-service
+    image: yasthedreamer/bookstore:ui-service
     stdin_open: true
     tty: true
     build:

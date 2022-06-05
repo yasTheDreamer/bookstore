@@ -5,8 +5,6 @@ RUN pip freeze > requirements.txt
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 
-RUN mkdir "/test"
-
 ENV NODE_VERSION=16.13.0
 RUN apt install -y curl
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
@@ -19,7 +17,3 @@ ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
 RUN npm install -g nodemon
 COPY . .
 CMD ["nodemon","-L","--exec","python3", "manage.py", "runserver", "0.0.0.0:5000"]
-
-FROM centos:centos7.9.2009 as centos
-
-RUN python -V
