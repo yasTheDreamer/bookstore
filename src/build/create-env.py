@@ -9,21 +9,19 @@ def main(args=None):
     parser.add_argument('--venv', required=True)
     parser.add_argument('--requirements', required=False, nargs='?')
     parser.add_argument('--python', required=True)
+    parser.add_argument('--dir', required=True)
 
     env_variables = os.environ.copy()
     miniconda_env_name = r"C:\ProgramData\Anaconda3"
-    workin_dir = 'system.teamcity.build.workingDir'
+
 
     params = vars(parser.parse_args(args))
     virtualenv = params['venv']
     requirements_file = params['requirements']
     python_version = params['python']
+    workin_dir = params['dir']
 
-    if env_variables[workin_dir] == "":
-        print("env is not set")
-        exit(-1)
-
-    print(f'working dir is : {env_variables[workin_dir]}')
+    print(f'working dir is : {workin_dir}')
 
     conda_path = os.path.join(miniconda_env_name, 'Scripts', 'conda.exe')
     pip_path = os.path.join(miniconda_env_name, 'Scripts', 'pip.exe')
