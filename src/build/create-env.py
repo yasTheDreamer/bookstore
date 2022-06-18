@@ -21,7 +21,7 @@ def main(args=None):
     python_version = params['python']
     workin_dir = params['dir']
 
-    print(f'working dir is : {workin_dir}')
+    print(f'workin dir is : {workin_dir}')
 
     conda_path = os.path.join(miniconda_env_name, 'Scripts', 'conda.exe')
     pip_path = os.path.join(miniconda_env_name, 'Scripts', 'pip.exe')
