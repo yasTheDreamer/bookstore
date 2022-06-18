@@ -12,7 +12,7 @@ def main(args=None):
 
     env_variables = os.environ.copy()
     miniconda_env_name = r"C:\ProgramData\Anaconda3"
-    workin_dir = 'teamcity.build.workingDir'
+    workin_dir = 'system.teamcity.build.workingDir'
 
     params = vars(parser.parse_args(args))
     virtualenv = params['venv']
